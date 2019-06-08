@@ -26,5 +26,15 @@ Running a fake-sudoed program:
 LD_PRELOAD=./libfakesudo.so LIBFAKESUDO_UID=<faked uid> <command>
 ```
 
+or
+
+```sh
+sudo -u <faked username> <command>
+```
+
+**WARNING**: Custom `/usr/bin/sudo` is provided by this program, which might conflict with system-provided
+`sudo` implementation. Install (a) to any location if `sudo` is not provided by the system (e.g.
+Arch on Termux) or (b) to location like `~/bin` or `/usr/local/bin` if you want to avoid conflicts.
+
 ## License
 Unlicense (Public Domain). See LICENSE file for details
