@@ -9,7 +9,8 @@ implementation is far from being perfect but... it kinda works
 Prerequisites:
 
 - [Meson build system](https://mesonbuild.com) and [Ninja](https://ninja-build.org/)
-- A Linux system
+- A Linux system (other POSIX systems might work, but it is not guaranteed)
+- A C++ compiler
 
 Building:
 
