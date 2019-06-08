@@ -1,0 +1,6 @@
+option(
+    'enable-fake-chown',
+    type: 'string',
+    value: 'true',
+    description: 'Fake chown() function not to do anything',
+)
