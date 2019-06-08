@@ -1,5 +1,6 @@
 project('fakesudo', 'cpp', version: '0.0.0', default_options: ['cpp_std=c++17'])
 
+
 # ============= #
 # Configuration #
 # ============= #
@@ -12,6 +13,7 @@ configure_file(
     output: 'config.hpp',
     configuration: config,
 )
+
 
 # ================================== #
 # Sources, includes and dependencies #
@@ -33,6 +35,7 @@ libfakesudo_depends = [
     meson.get_compiler('cpp').find_library('dl'),
 ]
 
+
 # ======= #
 # Targets #
 # ======= #
@@ -42,4 +45,7 @@ shared_library(
     libfakesudo_sources,
     include_directories: includes,
     dependencies: libfakesudo_depends,
+    install: true,
 )
+
+install_data('src/fakesudo/sudo.sh', rename: 'sudo', install_dir: 'bin')
