@@ -12,20 +12,12 @@ extern "C"
 char* getenv(const char* c_name)
 {
     auto old = get_next_symbol<char*, const char*>("getenv");
-    std::string_view name = c_name;
-    //if (name == "LD_PRELOAD") {
-    //    return nullptr;
-    //}
     return old(c_name);
 }
 
 char* secure_getenv(const char* c_name)
 {
     auto old = get_next_symbol<char*, const char*>("secure_getenv");
-    std::string_view name = c_name;
-    //if (name == "LD_PRELOAD") {
-    //    return nullptr;
-    //}
     return old(c_name);
 }
 
